@@ -1,4 +1,4 @@
-package com.cosign.NotificationService.model;
+package com.cosign.NotificationService.model.entities;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Embeddable;

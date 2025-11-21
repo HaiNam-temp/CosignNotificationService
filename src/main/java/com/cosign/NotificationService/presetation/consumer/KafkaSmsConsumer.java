@@ -9,14 +9,14 @@ import org.springframework.stereotype.Component;
 @Slf4j
 @RequiredArgsConstructor
 @Component
-public class KafkaEmailConsumer {
+public class KafkaSmsConsumer {
     @KafkaListener(
-            topics = Topics.NOTICE_EMAIL_TOPIC,
+            topics = Topics.NOTICE_SMS_TOPIC,
             groupId = "notification-service",
             containerFactory = "listenerContainerFactory"
     )
-    public void handlerEmailNotification(String message) {
-        log.info("[KafkaInAppConsumer - handlerEmailNotification] Consumed email notification message: {}", message);
+    public void handlerSmsNotification(String message) {
+        log.info("[KafkaInAppConsumer - handlerSmsNotification] Consumed SMS notification message: {}", message);
         // Here you would add the logic to process the in-app notification
     }
 }

@@ -7,16 +7,16 @@ import org.springframework.kafka.annotation.KafkaListener;
 import org.springframework.stereotype.Component;
 
 @Slf4j
-@RequiredArgsConstructor
 @Component
-public class KafkaEmailConsumer {
+@RequiredArgsConstructor
+public class KafkaInAppConsumer {
     @KafkaListener(
-            topics = Topics.NOTICE_EMAIL_TOPIC,
+            topics = Topics.NOTICE_INAPP_TOPIC,
             groupId = "notification-service",
             containerFactory = "listenerContainerFactory"
     )
-    public void handlerEmailNotification(String message) {
-        log.info("[KafkaInAppConsumer - handlerEmailNotification] Consumed email notification message: {}", message);
+    public void handlerInAppNotification(String message) {
+        log.info("[KafkaInAppConsumer - handlerInAppNotification] Consumed in-app notification message: {}", message);
         // Here you would add the logic to process the in-app notification
     }
 }
